@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include<string>
 using namespace std;
 
 template <typename T> T calc(T dt1, T dt2) {
@@ -9,7 +10,7 @@ template <typename T> T calc(T dt1, T dt2) {
 }
 
 
-int main()
+int main1()
 {
 	int par1, par2, add1;
 	double par3, par4, add2;
@@ -24,8 +25,39 @@ int main()
 	add2 = calc(par3, par4);
 	cout << "合計値：" << add2 << "\n";
 
+	return 0;
 }
 
+
+
+template <typename N1, typename N2> string calc2(N1 dt1, N2 dt2, string successMsgBase) {
+
+	N1 dt = dt1 + dt2;
+	string retStr = successMsgBase + to_string(dt);
+	return retStr;
+}
+
+
+int main2()
+{
+	int par1;
+	double par2;
+	string result;
+
+	cout << "整数値と実数値を入力してください。\n";
+	cin >> par1 >> par2;
+	result = calc2(par1, par2, "成功？やったね");
+	cout << result << "\n";
+
+	return 0;
+
+}
+
+int main()
+{
+	main2();
+
+}
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
 // プログラムのデバッグ: F5 または [デバッグ] > [デバッグの開始] メニュー
 
